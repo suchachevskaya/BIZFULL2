@@ -1,4 +1,4 @@
-<div class="www-renderforest-com">
+<div class="container">
 
 
     <div class="div">
@@ -7,27 +7,27 @@
                 <p class="p">Master the art of crowdfunding</p>
 
                 <div class="link">
-                <div class="text-wrapper-2">
-                    @auth
-                        <a href="{{ url('/create-project') }}">Start a new project</a>
-                    @else
-                        <a href="{{ route('login') }}">Start a new project</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"></a>
-                        @endif
-                    @endauth
-                </div>
+                    <div class="text-wrapper-2">
+                        @auth
+                            <a href="{{ url('/create-project') }}" class="profile-button">Start a new project</a>
+                        @else
+                            <a href="{{ route('login') }}" class="profile-button">Start a new project</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="profile-button"></a>
+                            @endif
+                        @endauth
+                    </div>
                 </div>
 
 
                 <div class="div-wrapper">
                     <div class="text-wrapper-3">
                         @auth
-                            <a href="{{ url('/view-projects') }}">Сhoose your project</a>
+                            <a href="{{ url('/view-projects') }}" class="profile-button" >Сhoose your project</a>
                         @else
-                            <a href="{{ route('login') }}">Сhoose your project</a>
+                            <a href="{{ route('login') }}" class="profile-button" >Сhoose your project</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}"></a>
+                                <a href="{{ route('register') }} class="profile-button""></a>
                             @endif
                         @endauth
                     </div>
@@ -48,7 +48,11 @@
                 <p class="text-wrapper-6">
                     Develop new ideas, products and services that can be useful to the individual or society as a whole.
                 </p>
-                <img class="image" src="img/image-3.png" />
+                <div class="logoContainer">
+                    <div><img class="image" src="img/image-3.png" /></div>
+
+                <p class="logo-text">BIZFULL</p>
+                </div>
             </div>
             <div class="iframe-body-section">
                 <img class="div-lazyload-mask" src="img/div-lazyload-mask-group-2.svg" />
@@ -81,7 +85,7 @@
             </div>
             <div class="div-teamstyled-wrapper">
                 <div class="div-teamstyled">
-                    <div class="heading-5"><div class="text-wrapper-14">Meet our best projects</div></div>
+                    <div class="heading-5"><div class="text-wrapper-14">Meet our team</div></div>
                     <div class="div-3">
                         <div class="heading-6"><div class="text-wrapper-15">Rebecca Evans</div></div>
                         <div class="heading-7"><div class="text-wrapper-16">SMM/Content marketing</div></div>
@@ -125,8 +129,9 @@
             </div>
             <div class="div-teamstyled-wrapper">
                 <div class="div-teamstyled">
-                    <div class="heading-5"><div class="text-wrapper-14">Meet our best projects</div></div>
+                    <div class="heading-5"><div class="text-wrapper-14">Meet our team</div></div>
                     <div class="div-3">
+                        <img class="div-4" src="img/people1.png" />
                         <div class="heading-6"><div class="text-wrapper-15">Rebecca Evans</div></div>
                         <div class="heading-7"><div class="text-wrapper-16">SMM/Content marketing</div></div>
                         <div class="p-teamstyled">
@@ -137,9 +142,10 @@
                                 email<br />marketing.
                             </p>
                         </div>
-                        <img class="div-4" src="img/div-team1styled-socialwrap-sc-15tndvc-12-6.svg" />
+
                     </div>
                     <div class="div-5">
+                        <img class="div-4" src="img/people2.png" />
                         <div class="heading-6"><div class="text-wrapper-17">Peter Beckett</div></div>
                         <div class="heading-7"><div class="text-wrapper-18">SEO/PPC marketing</div></div>
                         <div class="p-teamstyled">
@@ -150,9 +156,10 @@
                                 pay-per-click (PPC)<br />advertising.
                             </p>
                         </div>
-                        <img class="div-4" src="img/div-team1styled-socialwrap-sc-15tndvc-12-5.svg" />
+
                     </div>
                     <div class="div-6">
+                        <img class="div-4" src="img/people3.png" />
                         <div class="heading-6"><div class="text-wrapper-19">Ana Johnson</div></div>
                         <div class="heading-7"><div class="text-wrapper-20">Marketing data analytics</div></div>
                         <div class="p-teamstyled">
@@ -163,7 +170,7 @@
                                 to excel in<br />marketing analytics.
                             </p>
                         </div>
-                        <img class="div-4" src="img/div-team1styled-socialwrap-sc-15tndvc-12-2.svg" />
+
                     </div>
                 </div>
             </div>
@@ -311,8 +318,7 @@
             @if (Route::has('login'))
                 <div class="text-wrapper-46">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
+                        <a href="{{ url('/user/profile') }}" class="profile-button">Profile</a>    @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
                         @if (Route::has('register'))
@@ -323,6 +329,5 @@
             @endif
 
         </div>
-
     </div>
 </div>

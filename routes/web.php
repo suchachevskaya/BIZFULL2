@@ -17,7 +17,10 @@ use App\Livewire\CardComponent;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('');
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::middleware([
     'auth:sanctum',

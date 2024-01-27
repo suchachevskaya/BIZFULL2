@@ -5,6 +5,7 @@
     <div class="projectCardContainer">
 
         @foreach ($projects as $project)
+            @if($project->status=='resolved' || auth()->user()->hasRole('admin'))
             <div class="iframe-body-section">
                 <div class="div">
                     <div class="div-teamstyled">
@@ -18,9 +19,13 @@
                         <button>
                             <a href="{{ route('project-page', ['id' => $project->id]) }}">More</a>
                         </button>
+                        @if(auth()->user()->hasRole('admin'))
+                            @livewire('update-status', ['project' => $project])
+                        @endif
                     </div>
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
 </div>

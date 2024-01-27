@@ -7,7 +7,7 @@
     <title>Laravel</title>
 </head>
 <body class="antialiased">
-@livewire('create-project')
+@livewire('view-projects', ['project' => $project])
 </body>
 </html>
 

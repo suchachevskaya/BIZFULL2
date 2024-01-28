@@ -2,6 +2,10 @@
     <div class="heading">
         <div class="text-wrapper">Meet our projects</div>
     </div>
+
+    <div class="projectCardContainer">
+        @livewire('filter-projects')
+    </div>
     <div class="projectCardContainer">
 
         @foreach ($projects as $project)

@@ -1,35 +1,60 @@
-<div>
+<div class="all-project-container">
+    <div class="header-container">
+            <a class="logoContainer" href="{{ url('/welcome') }}">
+                <div>
+                    <img class="image" src="{{ asset('img/image-lg.png') }}"/>
+                </div>
+                <h1>
+                    BIZFULL
+                </h1>
+            </a>
+
+             <div class="header">
+            @if (Route::has('login'))
+                <div>
+                    @auth
+                        <a href="{{ url('/user/profile') }}" class="profile-button">Profile</a>
+                    @else
+                        <a href="{{ route('login') }}">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>
+
+    </div>
     <div class="heading">
         <div class="text-wrapper">Meet our projects</div>
     </div>
 
-    <div class="projectCardContainer">
+    <div>
         @livewire('filter-projects')
     </div>
     <div class="projectCardContainer">
-
         @foreach ($projects as $project)
             @if($project->status=='resolved' || auth()->user()->hasRole('admin'))
-            <div class="iframe-body-section">
-                <div class="div">
-                    <div class="div-teamstyled">
-                        <img class="img" src="img/OIG.sFh3EEgSM0QySj.jpg"/>
-                        <div class="div-wrapper">
-                            <div class="text-wrapper-2">{{$project->title }}</div>
-                        </div>
-                        <div class="heading-2">
-                            <div class="text-wrapper-3">{{$project->contact}}</div>
-                        </div>
-                        <button>
-                            <a href="{{ route('project-page', ['id' => $project->id]) }}">More</a>
-                        </button>
-                        @if(auth()->user()->hasRole('admin'))
-                            @livewire('update-status', ['project' => $project])
-                        @endif
-                    </div>
+                <div class="show-best rounded">
+                    <img class="image" src="{{ asset('storage/images/' . $project->attachment) }}"/>    <div class="">{{$project->title }}</div>
+                    <div class="">{{$project->contact}}</div>
+
+                        <a href="{{ route('project-page', ['id' => $project->id]) }}">
+                            <button>
+                                more
+                            </button>
+                        </a>
+
+                    @if(auth()->user()->hasRole('admin'))
+                        @livewire('update-status', ['project' => $project])
+                    @endif
+                    @if(auth()->user()->hasRole('admin'))
+                        @livewire('delete-project', ['project' => $project])
+                    @endif
                 </div>
-            </div>
+
             @endif
         @endforeach
     </div>
+    @livewire('footer');
 </div>

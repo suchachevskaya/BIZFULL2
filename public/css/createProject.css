@@ -1,0 +1,69 @@
+.rounded {
+    border-radius: 10px;
+}
+.container {
+    width: max(100% - 15px, 1024px);
+    margin-inline: auto;
+    font-family: "Square", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #BC6E64;
+    height: 100px;
+    color: #f2ede9;
+}
+
+.header-container img {
+    width: 110px;
+    height: auto;
+}
+form {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* Стиль для меток */
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Стиль для полей ввода */
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+}
+
+/* Стиль для fieldset и legend */
+fieldset {
+    border-color: grey;
+    border-width: thin;
+}
+
+legend {
+    padding-left :10 px ;
+    padding-right :10 px ;
+}

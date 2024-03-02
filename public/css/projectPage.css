@@ -1,0 +1,49 @@
+.project-container{
+    width: max(100% - 15px, 1024px);
+    margin-inline: auto;
+    font-family: "Square", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #BC6E64;
+    height: 100px;
+    color: #f2ede9;
+}
+
+.header-container img {
+    width: 110px;
+    height: auto;
+}
+.page-project-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.page-project-img img{
+    width: 600px;
+}
+.page-project-comment{
+
+}
+.title-project{
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+

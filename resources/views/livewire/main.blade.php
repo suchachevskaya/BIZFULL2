@@ -32,9 +32,6 @@
                     <a href="{{ url('/create-project') }}" class="start-button">Start a new project</a>
                 @else
                     <a href="{{ route('login') }}" class="start-button">Start a new project</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="start-button"></a>
-                    @endif
                 @endauth
             </div>
             <div>
@@ -42,9 +39,6 @@
                     <a href="{{ url('/view-projects') }}" class="create-button">Сhoose your project</a>
                 @else
                     <a href="{{ route('login') }}" class="create-button">Сhoose your project</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="create-button"></a>
-                    @endif
                 @endauth
             </div>
         </div>

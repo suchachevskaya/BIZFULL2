@@ -10,6 +10,7 @@ class PaymentProcess extends Component
 {
     public $amount;
     public $provider;
+    public $projectId;
 
     public function makePayment()
     {
@@ -31,6 +32,9 @@ class PaymentProcess extends Component
             // Проверьте, был ли заказ успешно создан
             if ($order['status'] == 'CREATED') {
                 // Если заказ был успешно создан, перенаправьте пользователя на страницу оплаты PayPal
+                $project = Project::find($this->projectId); // Найдите соответствующий проект
+                $project->total_donations += $this->amount; // Обновите total_donations
+                $project->save(); // Сохраните изменения
                 return redirect($order['links'][1]['href']);
             } else {
                 // Если при создании заказа произошла ошибка, информируйте пользователя об этом

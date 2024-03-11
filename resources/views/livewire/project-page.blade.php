@@ -55,7 +55,8 @@
         </div>
     </div>
 
-
+    <p>{{ $project->total_donations}}/{{$project->funding}}</p>
+    @livewire('progress-bar', ['total_donations' => $project->total_donations, 'funding' => $project->funding])
     @livewire('payment-process', ['project' => $project])
     @livewire('footer');
 </div>

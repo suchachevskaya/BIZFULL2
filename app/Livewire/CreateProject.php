@@ -7,6 +7,10 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\project;
 use App\Livewire\CreateFAQ;
+use App\Models\Reward;
+use App\Models\Social;
+use App\Models\FAQ;
+use App\Models\Gallery;
 
 
 
@@ -36,6 +40,7 @@ class CreateProject extends Component
     public $gallery;
     public $reward;
     public $_f_a_g;
+    public $total_donations;
 
 
     public function saveProject()
@@ -65,7 +70,7 @@ class CreateProject extends Component
             'video' => $this->video,
             'email' => $this->email,
             'phone' => $this->phone,
-            'social' => $this->social,
+            'total_donations' => $this->total_donations,
 
 
         ]);
@@ -90,11 +95,11 @@ class CreateProject extends Component
                 'link' => $social['link'],
             ]);
         }
-        foreach ($this->_f_a_g as $_f_a_g) {
+        foreach ($this->_f_a_g as $FAQ) {
             FAQ::create([
                 'project_id' => $project->id,
-                'network' => $_f_a_g['question'],
-                'link' => $_f_a_g['answer'],
+                'network' => $FAQ['question'],
+                'link' => $FAQ['answer'],
             ]);
         }
         $this->resetFields();
@@ -124,6 +129,7 @@ class CreateProject extends Component
         $this->gallery = [];
         $this->reward = [];
         $this->_f_a_g = [];
+        $this->total_donations = '';
     }
 
     public function mount()
@@ -132,5 +138,6 @@ class CreateProject extends Component
         $this->reward = [];
         $this->social = [];
         $this->_f_a_g = [];
+        $this->total_donations = 0; // Инициализация поля total_donations
     }
 }

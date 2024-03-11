@@ -2,19 +2,22 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
-use SebastianBergmann\CodeCoverage\Report\Xml\Project;
-//псевдоним
-use App\Models\project as ProjectModel;
 
+use Livewire\Component;
+
+use App\Models\Project;
 class ViewProjects extends Component
 
 {
+
+    protected $listeners = ['projectDeleted' => 'render'];
+
     public function render()
     {
-        $projects =ProjectModel::all();
-        return view('livewire.view-projects',[
-            'projects'=>$projects,
-    ]);
+        $projects = Project::all(); // Получите все проекты
+
+        return view('livewire.view-projects', [
+            'projects' => $projects, // Передайте проекты в представление
+        ]);
     }
 }

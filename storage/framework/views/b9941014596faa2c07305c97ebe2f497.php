@@ -18,10 +18,10 @@
                         <a href="<?php echo e(route('login')); ?>">Log in</a>
                         <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
                             <a href="<?php echo e(route('register')); ?>">Register</a>
-                        <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
+                        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
-            <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
+            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
         </div>
 
     </div>
@@ -47,7 +47,7 @@ unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
     </div>
-    <div class="projectCardContainer">
+    <div class="projectCardContainer" >
         <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <!--[if BLOCK]><![endif]--><?php if($project->status=='resolved' || auth()->user()->hasRole('admin')): ?>
                 <div class="show-best rounded">
@@ -61,7 +61,8 @@ if (isset($__slots)) unset($__slots);
                         </a>
 
                     <!--[if BLOCK]><![endif]--><?php if(auth()->user()->hasRole('admin')): ?>
-                        <?php
+                        <div >
+                            <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -77,9 +78,9 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
-                    <!--[if BLOCK]><![endif]--><?php if(auth()->user()->hasRole('admin')): ?>
-                        <?php
+                        </div>
+                        <div >
+                            <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -95,11 +96,11 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
-
-            <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <!--[if ENDBLOCK]><![endif]-->
+            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
     </div>
     <?php
 $__split = function ($name, $params = []) {

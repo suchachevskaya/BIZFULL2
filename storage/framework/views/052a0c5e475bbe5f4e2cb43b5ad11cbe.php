@@ -32,9 +32,6 @@
                     <a href="<?php echo e(url('/create-project')); ?>" class="start-button">Start a new project</a>
                 <?php else: ?>
                     <a href="<?php echo e(route('login')); ?>" class="start-button">Start a new project</a>
-                    <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
-                        <a href="<?php echo e(route('register')); ?>" class="start-button"></a>
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
                 <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
             </div>
             <div>
@@ -42,9 +39,6 @@
                     <a href="<?php echo e(url('/view-projects')); ?>" class="create-button">Сhoose your project</a>
                 <?php else: ?>
                     <a href="<?php echo e(route('login')); ?>" class="create-button">Сhoose your project</a>
-                    <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
-                        <a href="<?php echo e(route('register')); ?>" class="create-button"></a>
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
                 <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
             </div>
         </div>

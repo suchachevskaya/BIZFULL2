@@ -19,10 +19,10 @@
                         <a href="<?php echo e(route('login')); ?>">Log in</a>
                         <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
                             <a href="<?php echo e(route('register')); ?>">Register</a>
-                        <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
-                    <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
+                        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
-            <?php endif; ?> <!--[if ENDBLOCK]><![endif]-->
+            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
         </div>
 
     </div>
@@ -55,12 +55,12 @@
         </div>
     </div>
 
-
+    <p><?php echo e($project->total_donations); ?>/<?php echo e($project->funding); ?></p>
     <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('payment-process', ['project' => $project]);
+[$__name, $__params] = $__split('progress-bar', ['total_donations' => $project->total_donations, 'funding' => $project->funding]);
 
 $__html = app('livewire')->mount($__name, $__params, 'lw-932720685-0', $__slots ?? [], get_defined_vars());
 
@@ -76,9 +76,25 @@ if (isset($__slots)) unset($__slots);
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('footer');
+[$__name, $__params] = $__split('payment-process', ['project' => $project]);
 
 $__html = app('livewire')->mount($__name, $__params, 'lw-932720685-1', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('footer');
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-932720685-2', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

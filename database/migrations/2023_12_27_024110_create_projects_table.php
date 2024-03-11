@@ -21,9 +21,11 @@ return new class extends Migration {
             $table->timestamps();
             $table->text('short_desc')->nullable();
             $table->decimal('funding')->nullable();
+            $table->decimal('total_donations')->nullable();
             $table->text('video')->nullable();
             $table->text('email')->nullable();
             $table->integer('phone')->nullable();
+
 
         });
     }

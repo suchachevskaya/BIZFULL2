@@ -32,7 +32,7 @@
     <div>
         @livewire('filter-projects')
     </div>
-    <div class="projectCardContainer">
+    <div class="projectCardContainer" >
         @foreach ($projects as $project)
             @if($project->status=='resolved' || auth()->user()->hasRole('admin'))
                 <div class="show-best rounded">
@@ -46,13 +46,14 @@
                         </a>
 
                     @if(auth()->user()->hasRole('admin'))
-                        @livewire('update-status', ['project' => $project])
-                    @endif
-                    @if(auth()->user()->hasRole('admin'))
-                        @livewire('delete-project', ['project' => $project])
+                        <div >
+                            @livewire('update-status', ['project' => $project])
+                        </div>
+                        <div >
+                            @livewire('delete-project', ['project' => $project])
+                        </div>
                     @endif
                 </div>
-
             @endif
         @endforeach
     </div>

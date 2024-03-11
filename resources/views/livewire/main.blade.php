@@ -171,40 +171,7 @@
     <div class="show-popular-wrapper">
         <div class="title title-blakc">Popular projects</div>
         <p>Support our talented creators and make their dreams come true</p> <br>
-        <div class="show-popular">
-            <img src="img/left.png"/>
-            <div class="show-popular-artical">
-                <div>
-                    <img class="show-popular-img" src="img/image-5.png"/>
-                </div>
-
-                <div class="article">
-                    <p>Robot assistant for children with special needs</p>
-                    <p>
-                        We want to create a robot that will help children with special needs in learning, development
-                        and
-                        socialization. The robot will have artificial intelligence that will adapt to the individual
-                        characteristics and interests of the child. The robot will communicate with the child, play with
-                        him,
-                        teach him new skills and keep him motivated. The robot will also be connected with parents and
-                        specialists who will be able to monitor and correct the child’s learning and development
-                        process. We
-                        believe that our project can improve the quality of life for children with special needs and
-                        their
-                        families.
-                    </p>
-                    <p> Price - $55 000 Duration - 3 months Instructor - Peter Beckett</p>
-                    <p>support</p>
-                </div>
-            </div>
-            <img src="img/right.png"/>
-        </div>
-        <div class="dot-wrapper">
-            <img src="img/dot-d.png"/>
-            <img src="img/dot-w.png"/>
-            <img src="img/dot-w.png"/>
-            <img src="img/dot-w.png"/>
-        </div>
+        @livewire('carousel')
 
     </div>
 

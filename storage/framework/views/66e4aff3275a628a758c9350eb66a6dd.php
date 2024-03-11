@@ -31,7 +31,7 @@
     </div>
 
     <div class="page-project-container">
-        <div>
+        <div class="page-project-text">
 
             <p><?php echo e($project->description); ?></p>
             <p>Категория: <?php echo e($project->category); ?></p>

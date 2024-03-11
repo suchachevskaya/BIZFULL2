@@ -31,7 +31,7 @@
     </div>
 
     <div class="page-project-container">
-        <div>
+        <div class="page-project-text">
 
             <p>{{ $project->description }}</p>
             <p>Категория: {{ $project->category }}</p>

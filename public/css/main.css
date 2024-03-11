@@ -195,6 +195,7 @@
 }
 .dot-wrapper{
     display: flex;
+    justify-content: center;
 
 }
 .show-popular-wrapper{
@@ -217,9 +218,6 @@
 .show-popular-artical{
     display: flex;
     width: 1160px;
-
-
-
 
 }
 .article{

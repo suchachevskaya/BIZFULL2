@@ -9,6 +9,10 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
+            manifest: '/build/manifest.json', // Добавьте эту строку
         }),
     ],
+    build: {
+        outDir: 'htdocs/build', // Измените директорию сборки на htdocs/build
+    },
 });

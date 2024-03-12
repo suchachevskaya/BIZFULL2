@@ -26,27 +26,12 @@
 
     </div>
     <div class="heading">
-        <div class="text-wrapper">Meet our projects</div>
+        <h1 class="text-wrapper">Meet our projects</h1>
     </div>
 
-    <div>
-        <?php
-$__split = function ($name, $params = []) {
-    return [$name, $params];
-};
-[$__name, $__params] = $__split('filter-projects');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-0', $__slots ?? [], get_defined_vars());
 
-echo $__html;
 
-unset($__html);
-unset($__name);
-unset($__params);
-unset($__split);
-if (isset($__slots)) unset($__slots);
-?>
-    </div>
     <div class="projectCardContainer" >
         <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <!--[if BLOCK]><![endif]--><?php if($project->status=='resolved' || auth()->user()->hasRole('admin')): ?>
@@ -68,7 +53,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('update-status', ['project' => $project]);
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-1', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-0', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 
@@ -86,7 +71,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('delete-project', ['project' => $project]);
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-2', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-1', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 
@@ -108,7 +93,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('footer');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-3', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-2', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

@@ -25,13 +25,13 @@
         </div>
 
     </div>
-    <div class="heading">
-        <div class="text-wrapper">Meet our projects</div>
-    </div>
+{{--    <div class="heading">--}}
+{{--        <h1 class="text-wrapper">Meet our projects</h1>--}}
+{{--    </div>--}}
 
-    <div>
-        @livewire('filter-projects')
-    </div>
+{{--    <div>--}}
+{{--        @livewire('filter-projects')--}}
+{{--    </div>--}}
     <div class="projectCardContainer" >
         @foreach ($projects as $project)
             @if($project->status=='resolved' || auth()->user()->hasRole('admin'))

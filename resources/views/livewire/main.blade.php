@@ -170,7 +170,7 @@
 
     <div class="show-popular-wrapper">
         <div class="title title-blakc">Popular projects</div>
-        <p>Support our talented creators and make their dreams come true</p> <br>
+        <h2>Support our talented creators and make their dreams come true</h2> <br>
         @livewire('carousel')
 
     </div>
@@ -215,7 +215,7 @@
     <div class="show-popular-wrapper">
         <div class="title title-blue">Hear our participant say</div>
         <div class="show-popular">
-            <img src="img/left.png"/>
+            {{--            <img src="img/left.png"/>--}}
             <div class="show-popular-artical">
                 <div class="icon-reviews-text rounded">
                     <div class="icon-reviews">
@@ -248,11 +248,11 @@
                     </p>
                 </div>
             </div>
-            <img src="img/right.png"/>
+            {{--            <img src="img/right.png"/>--}}
         </div>
 
     </div>
-@livewire('footer');
+    @livewire('footer');
 </div>
 
 

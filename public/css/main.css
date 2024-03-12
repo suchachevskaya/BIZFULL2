@@ -60,6 +60,8 @@
 }
 
 .start-button {
+    display: flex;
+    justify-content: center;
     background: #3D90D9;
     border-radius: 20px;
     color: #F2EDE9;
@@ -81,6 +83,8 @@
 }
 
 .create-button {
+    display: flex;
+    justify-content: center;
     background: #F2EDE9;
     border-radius: 20px;
     color: #030303;
@@ -128,6 +132,7 @@
     display: flex;
     justify-content: center;
     padding: 50px;
+    align-items: center;
 }
 
 .img-benefits-wrapper {

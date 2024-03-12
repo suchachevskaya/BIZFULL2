@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Srmklive\PayPal\Facades\PayPal;
 use Exception;
+use App\Models\Project;
 
 class PaymentProcess extends Component
 {
@@ -32,9 +33,13 @@ class PaymentProcess extends Component
             // Проверьте, был ли заказ успешно создан
             if ($order['status'] == 'CREATED') {
                 // Если заказ был успешно создан, перенаправьте пользователя на страницу оплаты PayPal
-                $project = Project::find($this->projectId); // Найдите соответствующий проект
-                $project->total_donations += $this->amount; // Обновите total_donations
-                $project->save(); // Сохраните изменения
+                $project = Project::find($this->projectId);
+                if ($project) {
+                    $project->total_donations += $this->amount;
+                    $project->save();
+                } else {
+                    // Обработка ошибки: проект не найден
+                }
                 return redirect($order['links'][1]['href']);
             } else {
                 // Если при создании заказа произошла ошибка, информируйте пользователя об этом

@@ -5,12 +5,13 @@ namespace App\Livewire;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use App\Models\project;
+
 use App\Livewire\CreateFAQ;
 use App\Models\Reward;
 use App\Models\Social;
 use App\Models\FAQ;
 use App\Models\Gallery;
+use App\Models\Project;
 
 
 

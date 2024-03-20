@@ -10,4 +10,6 @@
 <body class="antialiased">
 @livewire('project-page', ['id' => $id])
 </body>
+
 </html>
+

@@ -1,15 +1,15 @@
 <div class="all-project-container">
     <div class="header-container">
-            <a class="logoContainer" href="<?php echo e(url('/welcome')); ?>">
-                <div>
-                    <img class="image" src="<?php echo e(asset('img/image-lg.png')); ?>"/>
-                </div>
-                <h1>
-                    BIZFULL
-                </h1>
-            </a>
+        <a class="logoContainer" href="<?php echo e(url('/welcome')); ?>">
+            <div>
+                <img class="image" src="<?php echo e(asset('img/image-lg.png')); ?>"/>
+            </div>
+            <h1>
+                BIZFULL
+            </h1>
+        </a>
 
-             <div class="header">
+        <div class="header">
             <!--[if BLOCK]><![endif]--><?php if(Route::has('login')): ?>
                 <div>
                     <!--[if BLOCK]><![endif]--><?php if(auth()->guard()->check()): ?>
@@ -25,28 +25,23 @@
         </div>
 
     </div>
-    <div class="heading">
-        <h1 class="text-wrapper">Meet our projects</h1>
-    </div>
 
-
-
-
-    <div class="projectCardContainer" >
+    <div class="projectCardContainer">
         <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <!--[if BLOCK]><![endif]--><?php if($project->status=='resolved' || auth()->user()->hasRole('admin')): ?>
-                <div class="show-best rounded">
-                    <img class="image" src="<?php echo e(asset('storage/images/' . $project->attachment)); ?>"/>    <div class=""><?php echo e($project->title); ?></div>
+                <div class="show-best rounded slider">
+                    <img class="image" src="<?php echo e(asset('storage/images/' . $project->attachment)); ?>" alt="Attachment Image">
+                    <div class=""><?php echo e($project->title); ?></div>
                     <div class=""><?php echo e($project->contact); ?></div>
 
-                        <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
-                            <button>
-                                more
-                            </button>
-                        </a>
+                    <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
+                        <button>
+                            more
+                        </button>
+                    </a>
 
                     <!--[if BLOCK]><![endif]--><?php if(auth()->user()->hasRole('admin')): ?>
-                        <div >
+                        <div>
                             <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
@@ -64,7 +59,7 @@ unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
                         </div>
-                        <div >
+                        <div>
                             <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
@@ -87,6 +82,8 @@ if (isset($__slots)) unset($__slots);
             <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
     </div>
+    <div><?php echo e($projects->links('pagination::default')); ?></div>
+
     <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];

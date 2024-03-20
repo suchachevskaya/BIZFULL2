@@ -4,7 +4,8 @@ namespace App\Livewire;
 
 
 use Livewire\Component;
-
+use Livewire\Pagination;
+use Livewire\WithPagination;
 use App\Models\Project;
 class ViewProjects extends Component
 
@@ -17,7 +18,7 @@ class ViewProjects extends Component
         $projects = Project::all(); // Получите все проекты
 
         return view('livewire.view-projects', [
-            'projects' => $projects, // Передайте проекты в представление
+            'projects' => Project::paginate(15), // Передайте проекты в представление
         ]);
     }
 }

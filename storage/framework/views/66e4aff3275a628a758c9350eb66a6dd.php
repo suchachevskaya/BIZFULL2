@@ -40,7 +40,9 @@
             <p>Описание:<?php echo e($project->description); ?></p>
         </div>
         <div class="page-project-img">
-            <img class="image" src="<?php echo e(asset('storage/images/' . $project->attachment)); ?>"/>
+            <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $project->galleries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <img class="slide" src="<?php echo e(Storage::url('images/' . $image->image)); ?>" alt="Gallery Image">
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
         </div>
         <div class="page-project-comment">
             <p>Question/answer</p>
@@ -48,7 +50,7 @@
             <button>Send</button>
             <div>
                 <div>
-                    <img class="image" src="<?php echo e(asset('img/face-1.png')); ?>"/>
+                    <img class="image " src="<?php echo e(asset('img/face-1.png')); ?>"/>
                     <p>blablabla</p>
                 </div>
             </div>
@@ -104,5 +106,15 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>;
+
+
+    <style>
+        <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $project->galleries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        .slide:nth-child(<?php echo e($key + 1); ?>) {
+            animation-delay: <?php echo e($key * 3); ?>s;
+        }
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+    </style>
 </div>
+
 <?php /**PATH C:\OSPanel\BIZFULL2\resources\views/livewire/project-page.blade.php ENDPATH**/ ?>

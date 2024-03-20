@@ -42,6 +42,7 @@ class CreateProject extends Component
     public $reward;
     public $_f_a_g;
     public $total_donations;
+    public $projects;
 
 
     public function saveProject()
@@ -76,10 +77,12 @@ class CreateProject extends Component
 
         ]);
         foreach ($this->gallery as $image) {
+            $imageName = $project->id . '_' . uniqid() . '_' . microtime(true) . '.' . $image->extension();
+            $image->storeAs('public/images', $imageName);
+
             Gallery::create([
                 'project_id' => $project->id,
-                'image' => $image,
-
+                'image' => $imageName,
             ]);
         }
         foreach ($this->reward as $reward) {
@@ -99,46 +102,23 @@ class CreateProject extends Component
         foreach ($this->_f_a_g as $FAQ) {
             FAQ::create([
                 'project_id' => $project->id,
-                'network' => $FAQ['question'],
-                'link' => $FAQ['answer'],
+                'question' => $FAQ['question'],
+                'answer' => $FAQ['answer'],
             ]);
         }
-        $this->resetFields();
+
+
     }
 
-    public function resetFields()
-    {
-        $this->title = '';
-        $this->description = '';
-        $this->category = '';
-        $this->status = '';
-        $this->attachment = null;
-        $this->deadline = null;
-        $this->contact = '';
-        $this->user_id = null;
-        $this->status_change_by_id = null;
-        $this->video = '';
-        $this->email = '';
-        $this->phone = null;
-        $this->social = [];
-        $this->image = null;
-        $this->project = null;
-        $this->amount = null;
-        $this->descriptionReward = '';
-        $this->short_desc = '';
-        $this->funding = null;
-        $this->gallery = [];
-        $this->reward = [];
-        $this->_f_a_g = [];
-        $this->total_donations = '';
-    }
 
     public function mount()
     {
         $this->gallery = [];
         $this->reward = [];
-        $this->social = [];
+        $this->social = [['network' => 'facebook', 'link' => '']];
         $this->_f_a_g = [];
-        $this->total_donations = 0; // Инициализация поля total_donations
+        $this->total_donations = 0.0; // Инициализация поля total_donations
+        $this->category='technology';
     }
+
 }

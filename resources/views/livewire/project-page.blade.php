@@ -40,7 +40,9 @@
             <p>Описание:{{$project->description}}</p>
         </div>
         <div class="page-project-img">
-            <img class="image" src="{{ asset('storage/images/' . $project->attachment) }}"/>
+            @foreach($project->galleries as $image)
+                <img class="slide" src="{{ Storage::url('images/' . $image->image) }}" alt="Gallery Image">
+            @endforeach
         </div>
         <div class="page-project-comment">
             <p>Question/answer</p>
@@ -48,7 +50,7 @@
             <button>Send</button>
             <div>
                 <div>
-                    <img class="image" src="{{ asset('img/face-1.png') }}"/>
+                    <img class="image " src="{{ asset('img/face-1.png') }}"/>
                     <p>blablabla</p>
                 </div>
             </div>
@@ -59,4 +61,14 @@
     @livewire('progress-bar', ['total_donations' => $project->total_donations, 'funding' => $project->funding])
     @livewire('payment-process', ['project' => $project])
     @livewire('footer');
+
+
+    <style>
+        @foreach($project->galleries as $key => $image)
+        .slide:nth-child({{ $key + 1 }}) {
+            animation-delay: {{ $key * 3 }}s;
+        }
+        @endforeach
+    </style>
 </div>
+

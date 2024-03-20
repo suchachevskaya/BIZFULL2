@@ -84,3 +84,14 @@ button:hover {
     text-decoration: none;
 
 }
+.pagination{
+    max-width: 100px;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Square", sans-serif;
+    font-size: 20px;
+}
+.pagination a {
+    text-decoration: underline;
+}
+

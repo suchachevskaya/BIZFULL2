@@ -36,7 +36,6 @@
         <label for="category">Category:</label><br>
         <select wire:model="category" id="category" name="category">
             <option value="" disabled selected>Select a category</option>
-            <option value="categories">Categories</option>
             <option value="technology">Technologies</option>
             <option value="art">Art and Culture</option>
             <option value="health">Health and Well-being</option>

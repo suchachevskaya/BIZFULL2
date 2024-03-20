@@ -1,15 +1,15 @@
 <div class="all-project-container">
     <div class="header-container">
-            <a class="logoContainer" href="{{ url('/welcome') }}">
-                <div>
-                    <img class="image" src="{{ asset('img/image-lg.png') }}"/>
-                </div>
-                <h1>
-                    BIZFULL
-                </h1>
-            </a>
+        <a class="logoContainer" href="{{ url('/welcome') }}">
+            <div>
+                <img class="image" src="{{ asset('img/image-lg.png') }}"/>
+            </div>
+            <h1>
+                BIZFULL
+            </h1>
+        </a>
 
-             <div class="header">
+        <div class="header">
             @if (Route::has('login'))
                 <div>
                     @auth
@@ -25,31 +25,26 @@
         </div>
 
     </div>
-{{--    <div class="heading">--}}
-{{--        <h1 class="text-wrapper">Meet our projects</h1>--}}
-{{--    </div>--}}
 
-{{--    <div>--}}
-{{--        @livewire('filter-projects')--}}
-{{--    </div>--}}
-    <div class="projectCardContainer" >
+    <div class="projectCardContainer">
         @foreach ($projects as $project)
             @if($project->status=='resolved' || auth()->user()->hasRole('admin'))
-                <div class="show-best rounded">
-                    <img class="image" src="{{ asset('storage/images/' . $project->attachment) }}"/>    <div class="">{{$project->title }}</div>
+                <div class="show-best rounded slider">
+                    <img class="image" src="{{ asset('storage/images/' . $project->attachment) }}" alt="Attachment Image">
+                    <div class="">{{$project->title }}</div>
                     <div class="">{{$project->contact}}</div>
 
-                        <a href="{{ route('project-page', ['id' => $project->id]) }}">
-                            <button>
-                                more
-                            </button>
-                        </a>
+                    <a href="{{ route('project-page', ['id' => $project->id]) }}">
+                        <button>
+                            more
+                        </button>
+                    </a>
 
                     @if(auth()->user()->hasRole('admin'))
-                        <div >
+                        <div>
                             @livewire('update-status', ['project' => $project])
                         </div>
-                        <div >
+                        <div>
                             @livewire('delete-project', ['project' => $project])
                         </div>
                     @endif
@@ -57,5 +52,7 @@
             @endif
         @endforeach
     </div>
+    <div>{{$projects->links('pagination::default')}}</div>
+
     @livewire('footer');
 </div>

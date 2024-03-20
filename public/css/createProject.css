@@ -74,3 +74,19 @@ legend {
     padding-left :10 px ;
     padding-right :10 px ;
 }
+.containerCreateForm{
+    min-height: 450px;
+}
+button{
+    background: #3D90D9;
+    border-radius: 20px;
+    color: #F2EDE9;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border: solid #337FED 1px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 200px;
+    margin: 4px;
+    text-decoration: none;
+}

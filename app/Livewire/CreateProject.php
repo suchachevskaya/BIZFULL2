@@ -43,6 +43,7 @@ class CreateProject extends Component
     public $_f_a_g;
     public $total_donations;
     public $projects;
+    public $currentStep=1;
 
 
     public function saveProject()
@@ -119,6 +120,13 @@ class CreateProject extends Component
         $this->_f_a_g = [];
         $this->total_donations = 0.0; // Инициализация поля total_donations
         $this->category='technology';
+    }
+    public function increaseStep(){
+        $this->currentStep++;
+    }
+    public function decreaseStep()
+    {
+        $this->currentStep--;
     }
 
 }

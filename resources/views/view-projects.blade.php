@@ -10,5 +10,6 @@
 </head>
 <body class="antialiased">
 @livewire('view-projects')
+
 </body>
 </html>

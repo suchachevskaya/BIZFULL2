@@ -94,4 +94,32 @@ button:hover {
 .pagination a {
     text-decoration: underline;
 }
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #f58220;
+    cursor: pointer;
+}
+.dropdown {
+    margin: 10px 0;
+}
+.buttonFilter {
+    background-color: #f58220;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 

@@ -10,7 +10,7 @@ class CreateFAQ extends Component
     public $faqs=[];
     public function addFaq()
     {
-        $this->faqs[] = ['description' => '', 'amount' => ''];
+        $this->faqs[] = ['question' => '', 'answer' => ''];
     }
     public function render()
     {

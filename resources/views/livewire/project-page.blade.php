@@ -1,4 +1,4 @@
-<div class="project-container">
+<div>
     <div class="header-container">
 
         <a class="logoContainer" href="{{ url('/welcome') }}">
@@ -26,49 +26,103 @@
         </div>
 
     </div>
-    <div class="title-project">
-        <h1>{{ $project->title }}</h1>
-    </div>
 
-    <div class="page-project-container">
-        <div class="page-project-text">
-
-            <p>{{ $project->description }}</p>
-            <p>Категория: {{ $project->category }}</p>
-            <p>Статус: {{ $project->status }}</p>
-            <p>Срок выполнения: {{ $project->deadline }}</p>
-            <p>Описание:{{$project->description}}</p>
-        </div>
-        <div class="page-project-img">
-            @foreach($project->galleries as $image)
-                <img class="slide" src="{{ Storage::url('images/' . $image->image) }}" alt="Gallery Image">
-            @endforeach
-        </div>
-        <div class="page-project-comment">
-            <p>Question/answer</p>
-            <input/>
-            <button>Send</button>
-            <div>
-                <div>
-                    <img class="image " src="{{ asset('img/face-1.png') }}"/>
-                    <p>blablabla</p>
+    <div class="project-container">
+        <div class="project-container-inf">
+            <div class="project-section-img">
+                <div class="project-img">
+                    @foreach($project->galleries as $image)
+                        <img class="slide" src="{{ Storage::url('images/' . $image->image) }}" alt="Gallery Image">
+                    @endforeach
                 </div>
+                <div class="project-link">
+                    @if(count($project->socials) > 0)
+                        <p>View profile:</p>
+                        @foreach ($project->socials as $social)
+                            @if($social->link && in_array($social->network, ['facebook', 'twitter', 'instagram']))
+                                <a href="{{ $social->link }}">
+                                    <img src="/img/icon/{{ $social->network }}.png" alt="{{ $social->network }}">
+                                </a>
+
+                            @endif
+
+                        @endforeach
+                    @else
+                        <p>No social networks.</p>
+                    @endif
+                </div>
+                <div class="project-button">
+                    @if(auth()->user()->hasRole('admin'))
+                        @livewire('update-status', ['project' => $project])
+                        @livewire('delete-project', ['project' => $project])
+
+                    @endif
+                </div>
+                <div class="project-summ-container">
+                    @livewire('progress-bar', ['total_donations' => $project->total_donations, 'funding' =>
+                    $project->funding])
+                    @livewire('payment-process', ['project' => $project])
+                </div>
+
+            </div>
+            <div class="project-section-content">
+                <h1> {{ $project->title }}</h1>
+                <hr>
+                <div class="project-inf"><b>Category:</b>
+                    <p>{{ $project->category }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Deadline:</b>
+                    <p>{{ $project->deadline }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Contact:</b>
+                    <p>{{ $project->contact }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Funding:</b>
+                    <p>{{ $project->funding }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Email:</b>
+                    <p>{{ $project->email }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Phone:</b>
+                    <p>{{ $project->phone }}</p></div>
+                <hr>
+                <div class="project-inf"><b>Total donations:</b>
+                    <p>{{ $project->total_donations }}</p></div>
+                <hr>
+                @if(auth()->user()->hasRole('admin'))
+                    <div class="project-inf"><b>Статус:</b>
+                        <p>{{ $project->status }}</p></div>
+                    <hr>
+                    <div class="project-inf"><b>User id:</b>
+                        <p>{{$project->user_id}}</p></div>
+                    <hr>
+                @endif
             </div>
         </div>
+        <div class="faq-container">
+            <p class="faq-section-title">Frequently asked questions:</p>
+            <p class="faq-title">What is this project about?</p>
+            <p class="faq-description"> {{ $project->description }}</p>
+            @foreach($project->faqs as $_f_a_g)
+                <p class="faq-question">{{ $_f_a_g->question }}</p>
+                <p class="faq-answer">{{ $_f_a_g->answer }}</p>
+            @endforeach
+        </div>
+        <div>
+            @if(!empty($project->video))
+                <p>View profile:</p>
+                <video width="320" height="240" controls>
+                    <source src="{{ $project->video }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            @else
+                @if(auth()->user()->hasRole('admin'))
+                    <p>There is no video.</p>
+                @endif
+            @endif
+        </div>
     </div>
-
-    <p>{{ $project->total_donations}}/{{$project->funding}}</p>
-    @livewire('progress-bar', ['total_donations' => $project->total_donations, 'funding' => $project->funding])
-    @livewire('payment-process', ['project' => $project])
+    <h2>Your feedback on the {{$project->title}}</h2>
+    @livewire('comment');
     @livewire('footer');
-
-
-    <style>
-        @foreach($project->galleries as $key => $image)
-        .slide:nth-child({{ $key + 1 }}) {
-            animation-delay: {{ $key * 3 }}s;
-        }
-        @endforeach
-    </style>
 </div>
-

@@ -25,6 +25,7 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
+
 </body>
 </html>
 <?php /**PATH C:\OSPanel\BIZFULL2\resources\views/view-projects.blade.php ENDPATH**/ ?>

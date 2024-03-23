@@ -1,7 +1,7 @@
-<div>
-    <form wire:submit.prevent="makePayment">
-        <input type="number" wire:model="amount">
-        <button type="submit"> Оплатить</button>
+<div class="project-payment-container">
+    <form class="project-payment" wire:submit.prevent="makePayment">
+        <input type="number" wire:model="amount" PLACEHOLDER="Enter the donation amount">
+        <button type="submit">Support</button>
     </form>
 
     <!--[if BLOCK]><![endif]--><?php if(session()->has('message')): ?>

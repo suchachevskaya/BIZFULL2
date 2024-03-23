@@ -1,5 +1,5 @@
-<div class="w-full bg-gray-200">
-    <div class="text-xs leading-none py-1 text-center text-white" style="width: {{ $percentage }}%; background-color: blue;">
-        {{ $percentage }}%
+    <div class="inputPercentage">
+        <p>{{ $percentage }}%</p>
+        <input type="range" min="0" max="100" value="{{ $percentage }}" class="slider" id="myRange" disabled>
     </div>
-</div>
+

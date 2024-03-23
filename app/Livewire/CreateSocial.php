@@ -9,7 +9,7 @@ class CreateSocial extends Component
     public $socials=[];
     public function addSocial()
     {
-        $this->socials[] = ['description' => '', 'amount' => ''];
+        $this->socials[] = ['network' => '', 'link' => ''];
     }
     public function render()
     {

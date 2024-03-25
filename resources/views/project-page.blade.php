@@ -10,6 +10,26 @@
 <body class="antialiased">
 @livewire('project-page', ['id' => $id])
 </body>
-
+<script src="/js/jquery.min.js"></script>
+<script src="/js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        console.log("carousel initialized");
+        $(".owl-carousel").owlCarousel({
+            center: true,
+            items: 1, // отображаем только одно изображение за раз
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplaySpeed: 1000, // время анимации в миллисекундах
+            nav: false, // отключаем навигацию
+            responsive: {
+                600: {
+                    items: 1
+                }
+            }
+        });
+    });
+</script>
 </html>
-

@@ -1,36 +1,35 @@
 <div class="all-project-container">
-    <div class="header-container">
-        <a class="logoContainer" href="<?php echo e(url('/welcome')); ?>">
-            <div>
-                <img class="image" src="<?php echo e(asset('img/image-lg.png')); ?>"/>
-            </div>
-            <h1>
-                BIZFULL
-            </h1>
-        </a>
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('header');
 
-        <div class="header">
-            <!--[if BLOCK]><![endif]--><?php if(Route::has('login')): ?>
-                <div>
-                    <!--[if BLOCK]><![endif]--><?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/user/profile')); ?>" class="profile-button">Profile</a>
-                    <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>">Log in</a>
-                        <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Register</a>
-                        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-                </div>
-            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-        </div>
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-0', $__slots ?? [], get_defined_vars());
 
-    </div>
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
 
     <div>
-        <form wire:submit.prevent="applyFilter">
-            <input type="range" min="0" max="100000" class="slider" id="funding" wire:model.defer="fundingFilter">
-            <input wire:model.defer="deadline" type="range" min="2024" max="2030"
-                   class="slider" id="deadline">
+        <form class="filterProjects" wire:submit.prevent="applyFilter">
+            <div>
+                <p>Required amount:</p>
+                <input type="range" min="0" max="100000" class="slider" id="funding" wire:model.defer="fundingFilter">
+            </div>
+
+            <input type="number" min="0" max="100000" wire:model.defer="fundingFilter">
+            <div>
+                <p> Donation deadline:</p>
+                <input wire:model.defer="deadline" type="range" min="2024" max="2030" class="slider" id="deadline">
+            </div>
+
+            <input type="number" min="2024" max="2030" wire:model.defer="deadline">
 
             <select wire:model.defer="projectStatus" class="projectStatus"
                     id="projectStatus">
@@ -55,28 +54,35 @@
                 <option value="newToOld">from new to old</option>
                 <option value="oldToNew">from old to new</option>
             </select>
-            <button type="button" class="buttonFilter" id="resetFilters" wire:click="resetFilters" onclick="Livewire.emit('refreshComponent')">Сбросить</button>
+
             <button type="submit">Find</button>
         </form>
     </div>
 
 
     <div class="projectCardContainer">
-        <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <!--[if BLOCK]><![endif]--><?php if($project->status=='resolved' || auth()->user()->hasRole('admin')): ?>
-                <div class="show-best rounded slider" wire:key="<?php echo e($project->id); ?>">
-                    <img class="image" src="<?php echo e(asset('storage/images/' . $project->attachment)); ?>" alt="Attachment Image">
-                    <div class=""><?php echo e($project->title); ?></div>
-                    <div class=""><?php echo e($project->contact); ?></div>
+        <!--[if BLOCK]><![endif]--><?php if($projects->isEmpty()): ?>
+            <p>There are no suitable projects according to your parameters</p>
+        <?php else: ?>
+            <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <!--[if BLOCK]><![endif]--><?php if($project->status=='resolved' || auth()->user()->hasRole('admin')): ?>
+                    <div class="show-best rounded slider" wire:key="<?php echo e($project->id); ?>">
+                        <img class="image" src="<?php echo e(asset('storage/images/' . $project->attachment)); ?>"
+                             alt="Attachment Image">
+                        <h3 class=""><?php echo e($project->title); ?></h3>
+                        <p class=""><?php echo e($project->contact); ?></p>
+                        <p><?php echo e($project->short_desc); ?></p>
 
-                    <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
-                        <button>
-                            more
-                        </button>
-                    </a>
-                </div>
-            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+                        <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
+                            <button>
+                                more
+                            </button>
+                        </a>
+
+                    </div>
+                <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
     </div>
     <div><?php echo e($projects->links('pagination::default')); ?></div>
 
@@ -86,7 +92,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('footer');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-0', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-1', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

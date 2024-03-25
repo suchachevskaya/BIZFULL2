@@ -1,29 +1,20 @@
 <div class="container">
-    <div class="header-container">
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('header');
 
-        <a class="logoContainer" href="<?php echo e(url('/welcome')); ?>">
-            <div>
-                <img class="image" src="<?php echo e(asset('img/image-lg.png')); ?>"/>
-            </div>
-            <h1>
-                BIZFULL
-            </h1>
-        </a>
-        <div class="header">
-            <!--[if BLOCK]><![endif]--><?php if(Route::has('login')): ?>
-                <div>
-                    <!--[if BLOCK]><![endif]--><?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/user/profile')); ?>" class="profile-button">Profile</a>
-                    <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>">Log in</a>
-                        <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Register</a>
-                        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-                </div>
-            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-        </div>
-    </div>
+$__html = app('livewire')->mount($__name, $__params, 'lw-557900778-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
     <div class="banner-container">
         <p class="title">Master the art of crowdfunding</p>
         <div class="button-container">
@@ -177,7 +168,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('carousel');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-557900778-0', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-557900778-1', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 
@@ -273,7 +264,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('footer');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-557900778-1', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-557900778-2', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

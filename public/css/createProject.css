@@ -1,3 +1,4 @@
+@import "header.css";
 body{
     margin: 1px;
 }
@@ -19,30 +20,7 @@ body{
     text-decoration: none;
 }
 
-.logoContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #BC6E64;
-    height: 100px;
-    color: #f2ede9;
-    width: 100%;
-}
-
-.header-container img {
-    width: 110px;
-    height: auto;
-}
-.header{
-    margin-right: 50px;
-}
 form {
     max-width: 750px;
     margin: auto;
@@ -71,8 +49,8 @@ fieldset {
 }
 
 legend {
-    padding-left :10 px ;
-    padding-right :10 px ;
+    padding-left :10px ;
+    padding-right :10px ;
 }
 .containerCreateForm{
     min-height: 450px;

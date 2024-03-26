@@ -25,7 +25,18 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-
+<script src="/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        Livewire.on('stepChanged', function() {
+            $('.marquee-text').each(function() {
+                var text = $(this).text();
+                var html = '<marquee class="marquee-style">' + text + '</marquee>';
+                $(this).html(html);
+            });
+        });
+    });
+</script>
 </body>
 </html>
 

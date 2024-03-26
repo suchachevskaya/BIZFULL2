@@ -10,7 +10,18 @@
 </head>
 <body class="antialiased">
 @livewire('create-project')
-
+<script src="/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        Livewire.on('stepChanged', function() {
+            $('.marquee-text').each(function() {
+                var text = $(this).text();
+                var html = '<marquee class="marquee-style">' + text + '</marquee>';
+                $(this).html(html);
+            });
+        });
+    });
+</script>
 </body>
 </html>
 

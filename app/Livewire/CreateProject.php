@@ -14,7 +14,6 @@ use App\Models\Gallery;
 use App\Models\Project;
 
 
-
 class CreateProject extends Component
 {
     use WithFileUploads;
@@ -43,7 +42,7 @@ class CreateProject extends Component
     public $_f_a_g;
     public $total_donations;
     public $projects;
-    public $currentStep=1;
+    public $currentStep = 1;
 
 
     public function saveProject()
@@ -108,7 +107,7 @@ class CreateProject extends Component
             ]);
         }
 
-
+        return redirect()->route('notification-page')->with('message', 'The project has been created and is being processed.');
     }
 
 
@@ -119,11 +118,15 @@ class CreateProject extends Component
         $this->social = [['network' => 'facebook', 'link' => '']];
         $this->_f_a_g = [];
         $this->total_donations = 0.0; // Инициализация поля total_donations
-        $this->category='technology';
+        $this->category = 'technology';
     }
-    public function increaseStep(){
+
+    public function increaseStep()
+    {
         $this->currentStep++;
+
     }
+
     public function decreaseStep()
     {
         $this->currentStep--;

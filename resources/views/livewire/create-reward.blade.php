@@ -1,9 +1,10 @@
 <div>
     @foreach ($rewards as $index => $reward)
-        <label for="reward{{ $index }}">Награда {{ $index + 1 }}:</label><br>
-        <input type="text" id="reward{{ $index }}" wire:model="rewards.{{ $index }}.description" placeholder="Введите описание награды {{ $index + 1 }}"><br>
-        <input type="number" id="amount{{ $index }}" wire:model="rewards.{{ $index }}.amount" placeholder="Введите необходимую сумму пожертвований для награды {{ $index + 1 }}"><br>
+        <label for="reward{{ $index }}">Reward {{ $index + 2 }}:</label><br>
+        <input type="text" id="reward{{ $index }}" wire:model="rewards.{{ $index }}.description" placeholder="
+Enter reward description {{ $index + 2 }}"><br>
+        <input type="number" id="amount{{ $index }}" wire:model="rewards.{{ $index }}.amount" placeholder="Enter the required donation amount for the reward {{ $index + 2 }}"><br>
     @endforeach
 
-    <button wire:click="addReward">Добавить награду</button>
+    <button wire:click="addReward">Add reward</button>
 </div>

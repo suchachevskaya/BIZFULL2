@@ -7,7 +7,11 @@
             BIZFULL
         </h1>
     </a>
-
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="header">
         @if (Route::has('login'))
             <div>

@@ -32,6 +32,7 @@ if (isset($__slots)) unset($__slots);
                     <a href="<?php echo e(route('login')); ?>" class="create-button">Сhoose your project</a>
                 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
             </div>
+
         </div>
         <div class="meta-container">
             <div class="meta">
@@ -83,10 +84,8 @@ if (isset($__slots)) unset($__slots);
                     <!--[if BLOCK]><![endif]--><?php if(auth()->guard()->check()): ?>
                         <a href="<?php echo e(url('/view-projects')); ?>" class="start-button"> Enroll now</a>
                     <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>" class="start-button"> Enroll now</a>
-                        <!--[if BLOCK]><![endif]--><?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>" class="start-button"></a>
-                        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                        <a href="<?php echo e(route('register')); ?>" class="start-button"> Enroll now</a>
+
                     <?php endif; ?><!--[if ENDBLOCK]><![endif]--></div>
 
             </div>

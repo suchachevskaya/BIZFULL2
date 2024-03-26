@@ -183,7 +183,15 @@
                     <span class="ms-2 text-sm text-gray-600"><?php echo e(__('Remember me')); ?></span>
                 </label>
             </div>
+            <div class="flex items-center justify-end mt-4">
+                <?php if(Route::has('password.request')): ?>
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="<?php echo e(route('register')); ?>">
+                        <?php echo e(__('Not registered?')); ?>
 
+                    </a>
+                <?php endif; ?>
+
+            </div>
             <div class="flex items-center justify-end mt-4">
                 <?php if(Route::has('password.request')): ?>
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="<?php echo e(route('password.request')); ?>">
@@ -215,6 +223,7 @@
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
             </div>
+
         </form>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

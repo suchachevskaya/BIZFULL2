@@ -342,7 +342,7 @@
         display: flex;
         justify-content: center;
         background: #3D90D9;
-        border-radius: 20px;
+        border-radius: 10px;
         color: #F2EDE9;
         font-size: 20px;
         padding: 20px 40px 20px 40px;
@@ -356,7 +356,7 @@
     .start-button:hover {
         border: solid #337FED 1px;
         background: #1E62D0;
-        border-radius: 20px;
+        border-radius: 10px;
         text-decoration: none;
 
     }
@@ -365,7 +365,7 @@
         display: flex;
         justify-content: center;
         background: #F2EDE9;
-        border-radius: 20px;
+        border-radius: 10px;
         color: #030303;
         font-size: 20px;
         padding: 20px 40px 20px 40px;
@@ -379,7 +379,7 @@
     .create-button:hover {
         border: solid #D9A441 1px;
         background: #ffdfc9;
-        border-radius: 20px;
+        border-radius: 10px;
         text-decoration: none;
     }
 
@@ -635,7 +635,7 @@
         display: flex;
         justify-content: center;
         background: #3D90D9;
-        border-radius: 20px;
+        border-radius: 10px;
         color: #F2EDE9;
         font-size: 20px;
         padding: 20px 40px 20px 40px;
@@ -649,7 +649,7 @@
     .start-button:hover {
         border: solid #337FED 1px;
         background: #1E62D0;
-        border-radius: 20px;
+        border-radius: 10px;
         text-decoration: none;
 
     }
@@ -658,7 +658,7 @@
         display: flex;
         justify-content: center;
         background: #F2EDE9;
-        border-radius: 20px;
+        border-radius: 10px;
         color: #030303;
         font-size: 20px;
         padding: 20px 40px 20px 40px;
@@ -672,7 +672,7 @@
     .create-button:hover {
         border: solid #D9A441 1px;
         background: #ffdfc9;
-        border-radius: 20px;
+        border-radius: 10px;
         text-decoration: none;
     }
 

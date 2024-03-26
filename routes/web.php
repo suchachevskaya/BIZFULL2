@@ -45,6 +45,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/projects/{id}', function ($id) {
     return view('project-page', ['id'=>$id]);
 })->name('project-page');
+Route::get('/notification-page', function () {
+    return view('notification-page');
+})->name('notification-page');
 
 
 

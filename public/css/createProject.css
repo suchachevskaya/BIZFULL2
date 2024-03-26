@@ -30,16 +30,25 @@ form {
 label {
     display: block;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin:15px 5px 5px 5px;
 }
 
 /* Стиль для полей ввода */
-input[type="text"], input[type="email"], input[type="tel"], textarea {
+input, textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: solid 1px #ccc;
+    margin-bottom: 10px;
+}
+select{
+    width: 103%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    margin-bottom: 10px;
 }
 
 /* Стиль для fieldset и legend */
@@ -56,9 +65,9 @@ legend {
     min-height: 450px;
 }
 button{
-    background: #3D90D9;
-    border-radius: 20px;
-    color: #F2EDE9;
+    background: #F2EDE9;
+    border-radius: 13px;
+    color: #030303;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     border: solid #337FED 1px;
@@ -67,4 +76,37 @@ button{
     min-width: 200px;
     margin: 4px;
     text-decoration: none;
+}
+button:hover{
+    border: solid #D9A441 1px;
+    background: #ffdfc9;
+    border-radius: 13px;
+    text-decoration: none;
+
+}
+.marquee-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.marquee-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    margin-top: 300px;
+}
+
+.marquee-style {
+    width: 100%;
+}
+.step-container{
+    margin: 100px 0 0 0;
+}
+.button-nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }

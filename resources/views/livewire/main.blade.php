@@ -17,6 +17,7 @@
                     <a href="{{ route('login') }}" class="create-button">Сhoose your project</a>
                 @endauth
             </div>
+
         </div>
         <div class="meta-container">
             <div class="meta">
@@ -68,10 +69,8 @@
                     @auth
                         <a href="{{ url('/view-projects') }}" class="start-button"> Enroll now</a>
                     @else
-                        <a href="{{ route('login') }}" class="start-button"> Enroll now</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="start-button"></a>
-                        @endif
+                        <a href="{{ route('register') }}" class="start-button"> Enroll now</a>
+
                     @endauth</div>
 
             </div>

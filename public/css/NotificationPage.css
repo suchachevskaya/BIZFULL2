@@ -1,0 +1,71 @@
+@import "header.css";
+
+.notification-container {
+    width: max(100% - 15px, 1024px);
+    margin-inline: auto;
+    font-family: "Square", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.notification {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-button {
+    display: flex;
+    justify-content: center;
+    color: #F2EDE9;
+    border: solid #337FED 1px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+    width: 45%;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    background-color: #337FED;
+
+}
+
+.start-button:hover {
+    border: solid #337FED 1px;
+    background: #1E62D0;
+      text-decoration: none;
+
+}
+
+.create-button {
+    display: flex;
+    justify-content: center;
+    background: #F2EDE9;
+    color: #030303;
+    font-size: 20px;
+    margin: 5px;
+    width: 45%;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    border: solid #337FED 1px;
+}
+
+.create-button:hover {
+    border: solid #D9A441 1px;
+    background: #ffdfc9;
+    text-decoration: none;
+}
+
+.button-container {
+    display: flex;
+}

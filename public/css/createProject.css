@@ -65,22 +65,23 @@ legend {
     min-height: 450px;
 }
 button{
-    background: #F2EDE9;
-    border-radius: 13px;
-    color: #030303;
+    display: flex;
+    justify-content: center;
+    background: #3D90D9;
+    border-radius: 10px;
+    color: #F2EDE9;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     border: solid #337FED 1px;
     cursor: pointer;
     text-align: center;
-    min-width: 200px;
-    margin: 4px;
-    text-decoration: none;
+    width: 200px;
+    margin: 30px;
 }
 button:hover{
-    border: solid #D9A441 1px;
-    background: #ffdfc9;
-    border-radius: 13px;
+    border: solid #337FED 1px;
+    background: #1E62D0;
+    border-radius: 10px;
     text-decoration: none;
 
 }
@@ -109,4 +110,43 @@ button:hover{
     display: flex;
     justify-content: center;
     flex-direction: row;
+}
+.addButton{
+    display: flex;
+    justify-content: center;
+    background: whitesmoke;
+    border-radius: 10px;
+    color: #030303;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    border: solid #337FED 1px;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    margin: 30px;
+
+}
+.addButton:hover{
+    border: solid #D9A441 1px;
+    background: #ffdfc9;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+.createProjectButton{
+    background-color: #26D11D;
+    padding: 20px 20px 20px 20px;
+    border: solid #4EAE31 1px;
+    margin-bottom: 5px;
+}
+.createProjectButton:hover{
+    background-color:#21B419;
+    border: solid #4EAE31 1px;
+}
+
+
+/*не добавлять стили так как зависят все кнопки*/
+.createProjectButtonWrapper{
+    display: flex;
+    justify-content: center;
 }

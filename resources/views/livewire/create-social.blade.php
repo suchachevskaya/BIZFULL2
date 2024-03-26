@@ -10,6 +10,7 @@
         <input type="text" id="link{{ $index }}" wire:model="socials.{{ $index }}.link"
                placeholder="Enter your link {{ $index + 2 }}"><br>
     @endforeach
+        <div class="createProjectButtonWrapper" >
+            <button class="addButton" wire:click="addSocial"> Add social network</button></div>
 
-    <button wire:click="addSocial"> Add social network</button>
 </div>

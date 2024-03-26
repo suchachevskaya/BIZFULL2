@@ -5,6 +5,7 @@
 Enter reward description {{ $index + 2 }}"><br>
         <input type="number" id="amount{{ $index }}" wire:model="rewards.{{ $index }}.amount" placeholder="Enter the required donation amount for the reward {{ $index + 2 }}"><br>
     @endforeach
+        <div class="createProjectButtonWrapper" >
+            <button class="addButton" wire:click="addReward">Add reward</button> </div>
 
-    <button wire:click="addReward">Add reward</button>
 </div>

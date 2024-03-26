@@ -10,7 +10,8 @@
         <input type="text" id="link<?php echo e($index); ?>" wire:model="socials.<?php echo e($index); ?>.link"
                placeholder="Enter your link <?php echo e($index + 2); ?>"><br>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+        <div class="createProjectButtonWrapper" >
+            <button class="addButton" wire:click="addSocial"> Add social network</button></div>
 
-    <button wire:click="addSocial"> Add social network</button>
 </div>
 <?php /**PATH C:\OSPanel\BIZFULL2\resources\views/livewire/create-social.blade.php ENDPATH**/ ?>

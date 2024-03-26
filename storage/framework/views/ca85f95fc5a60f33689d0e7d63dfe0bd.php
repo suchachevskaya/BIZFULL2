@@ -163,7 +163,7 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-                <button type="submit">Create</button>
+                <div class="createProjectButtonWrapper"><button class="createProjectButton" type="submit">Create project</button></div>
             <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
         </form>
     </div>

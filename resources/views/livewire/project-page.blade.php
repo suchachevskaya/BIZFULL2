@@ -28,7 +28,7 @@
 
                 </div>
                 <div class="project-section-content">
-                    <h1> {{ $project->title }}</h1>
+                    <div class="title"> {{ $project->title }}</div>
                     <hr>
                     <div class="project-link project-inf">
                         @if(count($project->socials) > 0)
@@ -81,12 +81,13 @@
         </div>
 
         <div class="selection-faq-comment">
+            <div class="faq-section-title title">Frequently asked questions:</div>
             <div class="faq-container">
-                <p class="faq-section-title">Frequently asked questions:</p>
-                <p class="faq-title">What is this project about?</p>
+
+                <h2 class="faq-title">What is this project about?</h2>
                 <p class="faq-description"> {{ $project->description }}</p>
                 @foreach($project->faqs as $_f_a_g)
-                    <p class="faq-question">{{ $_f_a_g->question }}</p>
+                    <h2 class="faq-question">{{ $_f_a_g->question }}</h2>
                     <p class="faq-answer">{{ $_f_a_g->answer }}</p>
                 @endforeach
             </div>
@@ -104,8 +105,11 @@
                 @endif
             </div>
 
-            <h2>Your feedback on the {{$project->title}}</h2>
-            @livewire('comment')
+            <div class="project-comment">
+                <div class="title">Your feedback on the {{$project->title}}</div>
+                @livewire('comment')
+            </div>
+
         </div>
 
     </div>

@@ -7,6 +7,8 @@
         <input type="text" id="answer{{ $index }}" wire:model="faqs.{{ $index }}.answer"
                placeholder="Enter your answer {{ $index + 2 }}"><br>
     @endforeach
+    <div class="createProjectButtonWrapper" >
+        <button class="addButton" wire:click="addFaq"> Add faq</button>
+    </div>
 
-    <button wire:click="addFaq"> Add faq</button>
 </div>

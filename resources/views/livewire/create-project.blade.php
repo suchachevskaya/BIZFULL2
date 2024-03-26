@@ -103,7 +103,7 @@
                 <label for="faq1"> Answer:</label><br>
                 <input type="text" wire:model="_f_a_g.0.answer" id="faq1" name="faq1" placeholder="Введите ответ"><br>
                 @livewire('create-f-a-q')
-                <button type="submit">Create</button>
+                <div class="createProjectButtonWrapper"><button class="createProjectButton" type="submit">Create project</button></div>
             @endif
         </form>
     </div>

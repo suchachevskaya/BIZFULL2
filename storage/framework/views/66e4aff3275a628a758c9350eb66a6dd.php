@@ -103,7 +103,7 @@ if (isset($__slots)) unset($__slots);
 
                 </div>
                 <div class="project-section-content">
-                    <h1> <?php echo e($project->title); ?></h1>
+                    <div class="title"> <?php echo e($project->title); ?></div>
                     <hr>
                     <div class="project-link project-inf">
                         <!--[if BLOCK]><![endif]--><?php if(count($project->socials) > 0): ?>
@@ -156,12 +156,13 @@ if (isset($__slots)) unset($__slots);
         </div>
 
         <div class="selection-faq-comment">
+            <div class="faq-section-title title">Frequently asked questions:</div>
             <div class="faq-container">
-                <p class="faq-section-title">Frequently asked questions:</p>
-                <p class="faq-title">What is this project about?</p>
+
+                <h2 class="faq-title">What is this project about?</h2>
                 <p class="faq-description"> <?php echo e($project->description); ?></p>
                 <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $project->faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $_f_a_g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <p class="faq-question"><?php echo e($_f_a_g->question); ?></p>
+                    <h2 class="faq-question"><?php echo e($_f_a_g->question); ?></h2>
                     <p class="faq-answer"><?php echo e($_f_a_g->answer); ?></p>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
             </div>
@@ -179,8 +180,9 @@ if (isset($__slots)) unset($__slots);
                 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
             </div>
 
-            <h2>Your feedback on the <?php echo e($project->title); ?></h2>
-            <?php
+            <div class="project-comment">
+                <div class="title">Your feedback on the <?php echo e($project->title); ?></div>
+                <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -196,6 +198,8 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
+            </div>
+
         </div>
 
     </div>

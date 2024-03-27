@@ -182,11 +182,12 @@ if (isset($__slots)) unset($__slots);
 
             <div class="project-comment">
                 <div class="title">Your feedback on the <?php echo e($project->title); ?></div>
+
                 <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('comment');
+[$__name, $__params] = $__split('comment', ['project' => $project]);
 
 $__html = app('livewire')->mount($__name, $__params, 'lw-932720685-5', $__slots ?? [], get_defined_vars());
 

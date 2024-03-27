@@ -117,7 +117,7 @@ class CreateProject extends Component
         $this->reward = [];
         $this->social = [['network' => 'facebook', 'link' => '']];
         $this->_f_a_g = [];
-        $this->total_donations = 0.0; // Инициализация поля total_donations
+        $this->total_donations = 0.0;
         $this->category = 'technology';
     }
 

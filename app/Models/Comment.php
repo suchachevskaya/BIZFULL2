@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-    protected $fillable = ['body'];
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+    protected $fillable = ['body','project_id' ];
 }

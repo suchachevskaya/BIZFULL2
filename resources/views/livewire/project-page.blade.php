@@ -107,7 +107,8 @@
 
             <div class="project-comment">
                 <div class="title">Your feedback on the {{$project->title}}</div>
-                @livewire('comment')
+
+                @livewire('comment', ['project' => $project])
             </div>
 
         </div>

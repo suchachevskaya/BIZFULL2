@@ -14,9 +14,10 @@ class Comment extends Component
     public $user;
     public $project;
 
-    public function mount()
+    public function mount(Project $project)
     {
-        $this->comments = CommentModel::all();
+        $this->project = $project;
+        $this->comments = $this->project->comments;
         $this->user = Auth::user();
     }
 
@@ -26,14 +27,26 @@ class Comment extends Component
             'newComment' => 'required|min:3|max:500',
         ]);
 
-        $newComment = CommentModel::create(['body' => $this->newComment]);
+        $newComment = CommentModel::create([
+            'body' => $this->newComment,
+            'project_id' => $this->project->id,
+        ]);
         $this->comments->prepend($newComment);
         $this->newComment = "";
+    }
+    public function deleteComment($id){
+        $comment=\App\Models\Comment::find($id); if ($comment) {
+            $comment->delete();
+            // Обновляем список комментариев после удаления
+            $this->comments = $this->project->comments;
+        } else {
+            // Комментарий не найден
+        }
+
     }
 
     public function render()
     {
-
         return view('livewire.comment', ['project' => $this->project]);
     }
 }

@@ -1,5 +1,5 @@
 @import "header.css";
-
+@import "footer.css";
 .notification-container {
     width: max(100% - 15px, 1024px);
     margin-inline: auto;

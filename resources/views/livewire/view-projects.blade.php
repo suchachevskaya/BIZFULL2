@@ -5,40 +5,51 @@
         <form class="filterProjects" wire:submit.prevent="applyFilter">
             <div>
                 <p>Required amount:</p>
-                <input type="range" min="0" max="100000" class="slider" id="funding" wire:model.defer="fundingFilter">
-            </div>
+                <div class="input-wrapper">
+                    <input type="range" min="0" max="100000" class="slider" id="funding"
+                           wire:model.defer="fundingFilter">
+                    <input type="number" min="0" max="100000" wire:model.defer="fundingFilter">
+                </div>
 
-            <input type="number" min="0" max="100000" wire:model.defer="fundingFilter">
+            </div>
             <div>
                 <p> Donation deadline:</p>
-                <input wire:model.defer="deadline" type="range" min="2024" max="2030" class="slider" id="deadline">
+                <div class="input-wrapper">
+                    <input wire:model.defer="deadline" type="range" min="2024" max="2030" class="slider" id="deadline">
+                    <input type="number" min="2024" max="2030" wire:model.defer="deadline">
+                </div>
+
+            </div>
+            <div>
+                <select wire:model.defer="projectStatus" class="projectStatus"
+                        id="projectStatus">
+                    <option value="" disabled selected>Select status</option>
+                    <option value="open">open</option>
+                    <option value="resolved">resolved</option>
+                    <option value="rejected">rejected</option>
+                </select>
             </div>
 
-            <input type="number" min="2024" max="2030" wire:model.defer="deadline">
+            <div>
+                <select wire:model.defer="category" id="category" name="category">
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="technology">Technologies</option>
+                    <option value="art">Art and Culture</option>
+                    <option value="health">Health and Well-being</option>
+                    <option value="education">Education</option>
+                    <option value="ecology">Ecology and sustainability</option>
+                    <option value="social">Social initiatives</option>
+                    <option value="science and research">Science and research</option>
+                </select>
+            </div>
+            <div>
+                <select wire:model.defer="order" class="order" id="order">
+                    <option value="" disabled selected>Select order</option>
+                    <option value="newToOld">from new to old</option>
+                    <option value="oldToNew">from old to new</option>
+                </select>
+            </div>
 
-            <select wire:model.defer="projectStatus" class="projectStatus"
-                    id="projectStatus">
-                <option value="" disabled selected>Select status</option>
-                <option value="open">open</option>
-                <option value="resolved">resolved</option>
-                <option value="rejected">rejected</option>
-            </select>
-
-            <select wire:model.defer="category" id="category" name="category">
-                <option value="" disabled selected>Select a category</option>
-                <option value="technology">Technologies</option>
-                <option value="art">Art and Culture</option>
-                <option value="health">Health and Well-being</option>
-                <option value="education">Education</option>
-                <option value="ecology">Ecology and sustainability</option>
-                <option value="social">Social initiatives</option>
-                <option value="science and research">Science and research</option>
-            </select>
-            <select wire:model.defer="order" class="order" id="order">
-                <option value="" disabled selected>Select order</option>
-                <option value="newToOld">from new to old</option>
-                <option value="oldToNew">from old to new</option>
-            </select>
 
             <button type="submit">Find</button>
         </form>

@@ -1,6 +1,6 @@
 @import 'owl.carousel.css';
 @import "header.css";
-
+@import "footer.css";
 .project-container {
     width: max(100% - 15px, 1024px);
     margin-inline: auto;

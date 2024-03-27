@@ -18,9 +18,9 @@
         </div>
         <div>
             @auth
-                <a href="{{ url('/view-projects') }}" class="create-button">Сhoose your project</a>
+                <a href="{{ url('/view-projects') }}" class="create-button">View all projects</a>
             @else
-                <a href="{{ route('login') }}" class="create-button">Сhoose your project</a>
+                <a href="{{ route('login') }}" class="create-button">View all projects</a>
             @endauth
         </div>
 

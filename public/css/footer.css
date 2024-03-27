@@ -5,6 +5,8 @@
     align-items: center;
     background-color: #252B34;
     color: #f2ede9;
+    font-family: "Square", sans-serif;
+    font-size: 20px;
 }
 .input-container {
     display: flex;
@@ -22,8 +24,8 @@
     flex-grow: 1;
     margin-right: 10px;
     font-size: 16px;
-    border: none; /* Удаление границы */
-    outline: none; /* Добавлено для удаления границы при активации */
+    border: none;
+    outline: none;
 }
 
 .submit-button {
@@ -31,4 +33,6 @@
     border: none;
     outline: none;
     cursor: pointer;
+    color: black;
 }
+

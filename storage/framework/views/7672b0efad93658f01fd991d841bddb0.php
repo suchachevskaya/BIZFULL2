@@ -34,9 +34,9 @@ if (isset($__slots)) unset($__slots);
         </div>
         <div>
             <!--[if BLOCK]><![endif]--><?php if(auth()->guard()->check()): ?>
-                <a href="<?php echo e(url('/view-projects')); ?>" class="create-button">Сhoose your project</a>
+                <a href="<?php echo e(url('/view-projects')); ?>" class="create-button">View all projects</a>
             <?php else: ?>
-                <a href="<?php echo e(route('login')); ?>" class="create-button">Сhoose your project</a>
+                <a href="<?php echo e(route('login')); ?>" class="create-button">View all projects</a>
             <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
         </div>
 

@@ -68,13 +68,15 @@
                         <h3 class="">{{$project->title }}</h3>
                         <p class="">{{$project->contact}}</p>
                         <p>{{$project->short_desc}}</p>
-                        @livewire('star-counter', ['project' => $project])
-                        <a href="{{ route('project-page', ['id' => $project->id]) }}">
-                            <button>
-                                more
-                            </button>
-                        </a>
 
+                        <div class="button-star-wrapper">
+                            <a href="{{ route('project-page', ['id' => $project->id]) }}">
+                                <button>
+                                    more
+                                </button>
+                            </a>
+                            @livewire('star-counter', ['project' => $project])
+                        </div>
                     </div>
                 @endif
             @endforeach

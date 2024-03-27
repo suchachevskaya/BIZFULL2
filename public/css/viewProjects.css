@@ -135,6 +135,10 @@ select{
     max-width: 40px;
     max-height: 40px;
 }
+.button-star-wrapper{
+    display: flex;
+       align-items: center;
+}
 @media only screen and (max-width: 915px) {
     .all-project-container{
         width: max(100% - 15px, 700px);

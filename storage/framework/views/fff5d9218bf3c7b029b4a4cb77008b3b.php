@@ -1,12 +1,16 @@
 <div class="footer-container">
-    <h1>
-        Get news and updates
-    </h1>
-    <div class="input-container">
-        <input type="text" class="input-field" placeholder="Enter your email">
-        <div class="submit-button">Submit</div>
-    </div>
+    <a class="logoFooter" href="<?php echo e(url('/welcome')); ?>">
+        <div>
+            <img class="image" src="<?php echo e(asset('img/image-lg.png')); ?>"/>
+        </div>
+        <h1>
+            BIZFULL
+        </h1>
+    </a>
     <div>
+        Agreement & Copyright Holders
+    </div>
+    <div class="img-footer">
         <img src="<?php echo e(asset('img/Social-1.png')); ?>"/>
         <img src="<?php echo e(asset('img/Social-2.png')); ?>"/>
         <img src="<?php echo e(asset('img/Social-3.png')); ?>"/>

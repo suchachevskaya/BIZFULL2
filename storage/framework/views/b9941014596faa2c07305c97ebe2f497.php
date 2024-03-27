@@ -83,7 +83,14 @@ if (isset($__slots)) unset($__slots);
                         <h3 class=""><?php echo e($project->title); ?></h3>
                         <p class=""><?php echo e($project->contact); ?></p>
                         <p><?php echo e($project->short_desc); ?></p>
-                        <?php
+
+                        <div class="button-star-wrapper">
+                            <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
+                                <button>
+                                    more
+                                </button>
+                            </a>
+                            <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -99,12 +106,7 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-                        <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
-                            <button>
-                                more
-                            </button>
-                        </a>
-
+                        </div>
                     </div>
                 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->

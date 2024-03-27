@@ -35,4 +35,15 @@
     cursor: pointer;
     color: black;
 }
-
+.logoFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoFooter img{
+    width: 48px;
+    height: auto;
+}
+.img-footer{
+    margin: 30px;
+}

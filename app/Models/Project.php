@@ -40,6 +40,9 @@ class Project extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+    public function stars(){
+        return $this->hasMany(Star::class);
+    }
 
     protected $fillable = ['title','description', 'category', 'status', 'attachment', 'deadline', 'contact', 'user_id', 'status_change_by_id', 'funding', 'video', 'email', 'phone', 'social', 'total_donations', 'required_funds', 'short_desc'];
 }

@@ -127,6 +127,14 @@ select{
     display: flex;
 
 }
+.rating-container{
+    display: flex;
+    align-items: center;
+}
+.img-rating{
+    max-width: 40px;
+    max-height: 40px;
+}
 @media only screen and (max-width: 915px) {
     .all-project-container{
         width: max(100% - 15px, 700px);
@@ -137,5 +145,6 @@ select{
     }
 
 }
+
 
 

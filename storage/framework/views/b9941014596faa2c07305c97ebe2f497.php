@@ -83,7 +83,22 @@ if (isset($__slots)) unset($__slots);
                         <h3 class=""><?php echo e($project->title); ?></h3>
                         <p class=""><?php echo e($project->contact); ?></p>
                         <p><?php echo e($project->short_desc); ?></p>
+                        <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('star-counter', ['project' => $project]);
 
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-1', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
                         <a href="<?php echo e(route('project-page', ['id' => $project->id])); ?>">
                             <button>
                                 more
@@ -103,7 +118,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('footer');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-1', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-507232281-2', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

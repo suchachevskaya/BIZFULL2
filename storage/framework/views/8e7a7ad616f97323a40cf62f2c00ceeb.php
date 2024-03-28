@@ -6,7 +6,8 @@ Enter reward description <?php echo e($index + 2); ?>"><br>
         <input type="number" id="amount<?php echo e($index); ?>" wire:model="rewards.<?php echo e($index); ?>.amount" placeholder="Enter the required donation amount for the reward <?php echo e($index + 2); ?>"><br>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
         <div class="createProjectButtonWrapper" >
-            <button class="addButton" wire:click="addReward">Add reward</button> </div>
+            <button class="addButton" wire:click="addReward">Add reward</button>
+        </div>
 
 </div>
 <?php /**PATH C:\OSPanel\BIZFULL2\resources\views/livewire/create-reward.blade.php ENDPATH**/ ?>

@@ -28,8 +28,8 @@ class ViewProjects extends Component
     }
 
     public function render()
-    {if (auth()->user()->hasRole('admin')) {
-        \Log::info('User is an admin');
+    {
+
         $projects = Project::query();
 
         if ($this->fundingFilter) {
@@ -56,5 +56,5 @@ class ViewProjects extends Component
         return view('livewire.view-projects', [
             'projects' => $projects->paginate(15),
         ]);
-    }}
+    }
 }

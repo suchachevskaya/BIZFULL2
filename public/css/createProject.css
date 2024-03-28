@@ -151,3 +151,15 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+.is-invalid {
+    border-color: red;
+}
+.checkboxisReadyToSubmit{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.checkboxisReadyToSubmit input{
+    width: 30px;
+    margin: 5px;
+}

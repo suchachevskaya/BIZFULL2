@@ -57,7 +57,7 @@
                         <p>{{ $project->contact }}</p></div>
                     <hr>
                     <div class="project-inf"><b>Funding:</b>
-                        <p>{{ $project->funding }}</p></div>
+                        <p>{{ $project->funding }}$</p></div>
                     <hr>
                     <div class="project-inf"><b>Email:</b>
                         <p>{{ $project->email }}</p></div>
@@ -66,7 +66,7 @@
                         <p>{{ $project->phone }}</p></div>
                     <hr>
                     <div class="project-inf"><b>Total donations:</b>
-                        <p>{{ $project->total_donations }}</p></div>
+                        <p>{{ $project->total_donations }}$</p></div>
                     <hr>
                     @if(auth()->user()->hasRole('admin'))
                         <div class="project-inf"><b>Статус:</b>

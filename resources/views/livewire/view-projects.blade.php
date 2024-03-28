@@ -20,6 +20,7 @@
                 </div>
 
             </div>
+            @if(auth()->user()->hasRole('admin'))
             <div>
                 <select wire:model.defer="projectStatus" class="projectStatus"
                         id="projectStatus">
@@ -29,7 +30,7 @@
                     <option value="rejected">rejected</option>
                 </select>
             </div>
-
+            @endif
             <div>
                 <select wire:model.defer="category" id="category" name="category">
                     <option value="" disabled selected>Select a category</option>

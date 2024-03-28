@@ -35,6 +35,7 @@ if (isset($__slots)) unset($__slots);
                 </div>
 
             </div>
+            <!--[if BLOCK]><![endif]--><?php if(auth()->user()->hasRole('admin')): ?>
             <div>
                 <select wire:model.defer="projectStatus" class="projectStatus"
                         id="projectStatus">
@@ -44,7 +45,7 @@ if (isset($__slots)) unset($__slots);
                     <option value="rejected">rejected</option>
                 </select>
             </div>
-
+            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
             <div>
                 <select wire:model.defer="category" id="category" name="category">
                     <option value="" disabled selected>Select a category</option>

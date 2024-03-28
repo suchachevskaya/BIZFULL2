@@ -9,6 +9,7 @@ class CreateReward extends Component
     public $rewards=[];
     public function addReward()
     {
+
         $this->rewards[] = ['description' => '', 'amount' => ''];
     }
 

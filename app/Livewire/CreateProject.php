@@ -43,14 +43,17 @@ class CreateProject extends Component
     public $total_donations;
     public $projects;
     public $currentStep = 1;
+    public $isReadyToSubmit;
 
 
     public function saveProject()
-    {
+    {if (!$this->isReadyToSubmit) {
+        return;
+    }
         $this->validate([
             'title' => 'required',
             'description' => 'required',
-            'category' => 'required',
+
         ]);
         $attachmentName = null;
         if ($this->attachment) {
@@ -123,6 +126,28 @@ class CreateProject extends Component
 
     public function increaseStep()
     {
+        if ($this->currentStep == 1) {
+            $this->validate([
+                'title' => 'required',
+                'short_desc' => 'required',
+
+            ]);
+        } elseif ($this->currentStep == 2) {
+            $this->validate([
+                'description' => 'required',
+                'deadline' => 'required',
+                "funding"=> 'required',
+
+            ]);
+        }
+        elseif ($this->currentStep == 5) {
+            $this->validate([
+                "contact" => 'required',
+                "email" => 'required',
+
+
+            ]);
+        }
         $this->currentStep++;
 
     }

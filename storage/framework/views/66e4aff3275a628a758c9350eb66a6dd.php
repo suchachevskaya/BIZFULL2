@@ -132,7 +132,7 @@ if (isset($__slots)) unset($__slots);
                         <p><?php echo e($project->contact); ?></p></div>
                     <hr>
                     <div class="project-inf"><b>Funding:</b>
-                        <p><?php echo e($project->funding); ?></p></div>
+                        <p><?php echo e($project->funding); ?>$</p></div>
                     <hr>
                     <div class="project-inf"><b>Email:</b>
                         <p><?php echo e($project->email); ?></p></div>
@@ -141,7 +141,7 @@ if (isset($__slots)) unset($__slots);
                         <p><?php echo e($project->phone); ?></p></div>
                     <hr>
                     <div class="project-inf"><b>Total donations:</b>
-                        <p><?php echo e($project->total_donations); ?></p></div>
+                        <p><?php echo e($project->total_donations); ?>$</p></div>
                     <hr>
                     <!--[if BLOCK]><![endif]--><?php if(auth()->user()->hasRole('admin')): ?>
                         <div class="project-inf"><b>Статус:</b>
